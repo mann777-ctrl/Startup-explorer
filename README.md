@@ -20,18 +20,18 @@ The main objective of this project is to understand how to:
 
 ## API used
 
-https://api.sampleapis.com/futurama/characters
+https://jsonplaceholder.typicode.com/posts
 
-The data from this API is used as a dataset and represented as startup-like entries in the application.
+This API provides a collection of sample posts. In this project, each post is treated as a startup-like entry, where the title represents the name and the body acts as a short description.
 
 ---
 
-## Features
+## Features (planned)
 
-* Search functionality to find specific entries
-* Filter based on category
-* Sort data (for example, alphabetical order)
-* Display results in a clean layout
+* Search entries based on title
+* Filter data based on user/category
+* Sort entries alphabetically
+* Display data in a structured card layout
 
 ---
 
