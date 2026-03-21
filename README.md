@@ -20,7 +20,7 @@ The main objective of this project is to understand how to:
 
 ## API used
 
-https://api.publicapis.org/entries
+https://api.sampleapis.com/futurama/characters
 
 The data from this API is used as a dataset and represented as startup-like entries in the application.
 
