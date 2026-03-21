@@ -1,37 +1,39 @@
-#  Startup Explorer
+# Product Explorer
 
 ## About the project
 
-Startup Explorer is a simple web application that displays a collection of services and platforms using data from a public API. The idea is to present this data in a way that resembles browsing different startups, where each item has a name, category, and basic information.
+Product Explorer is a web application that allows users to browse and explore a collection of products. The data is fetched from a public API and displayed in a structured and user-friendly format.
 
-The application focuses on showing how data can be fetched from an API and then organized on the frontend in a structured and usable format.
+Each product includes details such as name, category, description, and price, making it easy for users to view and interact with the data.
 
 ---
 
 ## Objective
 
-The main objective of this project is to understand how to:
+The main objective of this project is to:
 
-* Fetch data from an API using JavaScript
-* Display the data dynamically on a web page
-* Apply operations like search, filtering, and sorting on the data
+* Fetch data from an API
+* Display it dynamically on the webpage
+* Implement search, filtering, and sorting using JavaScript
 
 ---
 
 ## API used
 
-https://jsonplaceholder.typicode.com/posts
+https://dummyjson.com/products
 
-This API provides a collection of sample posts. In this project, each post is treated as a startup-like entry, where the title represents the name and the body acts as a short description.
+This API provides product data which is used directly in the application.
 
 ---
 
-## Features (planned)
+## Features
 
-* Search entries based on title
-* Filter data based on user/category
-* Sort entries alphabetically
-* Display data in a structured card layout
+* Search products by name
+* Filter products based on category
+* Sort products alphabetically
+* Dark mode toggle
+* Loading indicator
+* Error handling for API failures
 
 ---
 
@@ -46,7 +48,7 @@ This API provides a collection of sample posts. In this project, each post is tr
 
 ## How to run
 
-Open the `index.html` file in a browser after downloading or cloning the repository.
+Open the `index.html` file in a browser or run using Live Server in VS Code.
 
 ---
 
