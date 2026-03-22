@@ -46,12 +46,6 @@ This API provides product data which is used directly in the application.
 
 ---
 
-## How to run
-
-Open the `index.html` file in a browser or run using Live Server in VS Code.
-
----
-
 ## Developed by
 
 Mann
