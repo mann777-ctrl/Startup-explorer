@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff8e7; /* cream white */
+  font-family: 'Segoe UI';
+}
+
+/* FORM */
+.form {
+  --input-focus: #2d8cf0;
+  --font-color: #323232;
+  --font-color-sub: #666;
+  --bg-color: #fff;
+  --main-color: #323232;
+
+  padding: 25px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  border-radius: 10px;
+  border: 2px solid var(--main-color);
+  box-shadow: 6px 6px var(--main-color);
+}
+
+/* TITLE */
+.title {
+  font-weight: 900;
+  font-size: 22px;
+}
+
+.title span {
+  color: #666;
+  font-size: 16px;
+}
+
+/* INPUT */
+.input {
+  width: 260px;
+  height: 40px;
+  border-radius: 6px;
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color);
+  padding: 5px 10px;
+  font-weight: 600;
+}
+
+.input:focus {
+  border: 2px solid var(--input-focus);
+  outline: none;
+}
+
+/* SOCIAL */
+.login-with {
+  display: flex;
+  gap: 15px;
+}
+
+.button-log {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 4px 4px var(--main-color);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* BUTTON */
+.button-confirm {
+  margin: 20px auto 0;
+  width: 140px;
+  height: 40px;
+  border: 2px solid var(--main-color);
+  background: white;
+  box-shadow: 4px 4px var(--main-color);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.button-confirm:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0px 0px;
+}

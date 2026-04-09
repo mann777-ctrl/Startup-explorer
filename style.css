@@ -1,293 +1,136 @@
+:root {
+  --main-color: #323232;
+  --bg-color: #fff8e7;
+  --card-bg: #ffffff;
+  --accent: #2d8cf0;
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f5f7fa;
-    color: #2d3748;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  background: var(--bg-color);
+  font-family: 'Segoe UI';
 }
 
 /* HEADER */
 .header {
-    background: linear-gradient(135deg, #00b894, #00cec9, #0984e3);
-    padding: 45px 20px;
-    text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+
+  background: white;
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color);
+  margin: 15px;
 }
 
 .logo {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
+  font-weight: bold;
 }
 
-.logo h1 {
-    color: white;
+/* SEARCH */
+.search-box input {
+  padding: 10px;
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color);
+  border-radius: 6px;
 }
 
-.tagline {
-    color: white;
+/* BUTTON */
+.btn {
+  border: 2px solid var(--main-color);
+  background: white;
+  box-shadow: 4px 4px var(--main-color);
+  padding: 8px 15px;
+  cursor: pointer;
+  font-weight: 600;
 }
 
-/* MAIN */
-.main-content {
-    flex: 1;
-    max-width: 1300px;
-    margin: auto;
-    padding: 30px;
+.btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0px 0px;
 }
 
 /* CONTROLS */
 .controls {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 30px;
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
+  display: flex;
+  gap: 10px;
+  padding: 15px;
 }
 
-#search, #filter, #sort {
-    padding: 12px;
-    border-radius: 8px;
+.controls select {
+  padding: 10px;
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color);
+  border-radius: 6px;
 }
 
 /* GRID */
 #container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
 }
 
 /* CARD */
 .card {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
+  background: white;
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color);
+  border-radius: 8px;
+  padding: 12px;
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px var(--main-color);
 }
 
 .card-img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+  width: 100%;
+  border-radius: 6px;
 }
 
-.card-body {
-    padding: 15px;
+.card-body h3 {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.card-body p {
+  font-size: 13px;
+  color: #555;
 }
 
 .card-price {
-    color: green;
+  font-weight: bold;
+  margin-top: 8px;
 }
 
-/* LOADING */
-.loading {
-    text-align: center;
-    display: none;
-}
-
-.loading.show {
-    display: block;
-}
-
-/* NO RESULTS */
+/* NO RESULT */
 .no-results {
-    text-align: center;
-    display: none;
+  text-align: center;
+  margin: 20px;
+  display: none;
 }
 
 .no-results.show {
-    display: block;
+  display: block;
 }
 
 /* FOOTER */
 .footer {
-    background: #111;
-    color: #ccc;
-    padding: 18px 30px;
-    font-size: 14px;
-}
+  margin: 20px;
+  padding: 15px;
+  text-align: center;
 
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-/* LEFT LINKS */
-.footer-links {
-    display: flex;
-    gap: 25px;
-    flex-wrap: wrap;
-}
-
-.footer-links span {
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.footer-links span:hover {
-    color: #facc15; /* yellow hover like Flipkart */
-}
-
-/* RIGHT SIDE */
-.footer-right {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.footer-right p {
-    margin: 0;
-    color: #aaa;
-}
-
-/* PAYMENT ICONS */
-.payments {
-    display: flex;
-    gap: 10px;
-}
-
-.payments img {
-    width: 40px;
-    height: auto;
-    background: white;
-    padding: 4px;
-    border-radius: 4px;
-}
-/* HEADER */
-.fk-header {
-    background: #fff;
-    padding: 10px 20px;
-    border-bottom: 1px solid #ddd;
-    font-family: 'Inter', sans-serif;
-}
-
-/* TOP ROW */
-.fk-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.fk-left {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-/* LOGO */
-.fk-logo {
-    display: flex;
-    align-items: center;
-    background: linear-gradient(135deg, #00b894, #00cec9, #0984e3);
-    padding: 10px 20px;
-    border-radius: 12px;
-    font-weight: bold;
-    gap: 8px;
-}
-
-.logo-text {
-    font-size: 18px;
-}
-
-/* CATEGORY PILLS */
-.fk-categories {
-    display: flex;
-    gap: 12px;
-}
-
-.pill {
-    background: #eee;
-    padding: 8px 16px;
-    border-radius: 12px;
-    cursor: pointer;
-}
-
-.pill.active {
-    background: #ffe500;
-    font-weight: 600;
-}
-
-/* RIGHT SIDE */
-.fk-right {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.location {
-    font-size: 14px;
-    color: #333;
-}
-
-.coins {
-    background: #f3f3f3;
-    padding: 6px 10px;
-    border-radius: 10px;
-}
-
-/* SEARCH ROW */
-.fk-search-row {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-/* SEARCH BOX */
-.search-box {
-    flex: 1;
-    position: relative;
-}
-
-.search-box input {
-    width: 100%;
-    padding: 14px 14px 14px 40px;
-    border-radius: 12px;
-    border: 2px solid #2874f0;
-    font-size: 16px;
-}
-
-.search-icon {
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-/* ACTIONS */
-.fk-actions {
-    display: flex;
-    gap: 20px;
-    font-size: 15px;
-    cursor: pointer;
-}
-
-.fk-actions span:hover {
-    color: #2874f0;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .fk-top {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .fk-search-row {
-        flex-direction: column;
-    }
-
-    .fk-actions {
-        justify-content: center;
-    }
+  background: white;
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color);
 }

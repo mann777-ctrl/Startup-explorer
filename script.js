@@ -4,43 +4,42 @@ const container = document.getElementById("container");
 const searchInput = document.getElementById("search");
 const filterSelect = document.getElementById("filter");
 const sortSelect = document.getElementById("sort");
-const loading = document.getElementById("loading");
 const noResults = document.getElementById("noResults");
 
 // FETCH DATA
 fetch("https://dummyjson.com/products")
-    .then(res => res.json())
-    .then(res => {
-        data = res.products;
-        showData(data);
-    });
+  .then(res => res.json())
+  .then(res => {
+    data = res.products;
+    showData(data);
+  });
 
-// DISPLAY DATA
+// DISPLAY
 function showData(arr) {
-    container.innerHTML = "";
+  container.innerHTML = "";
 
-    if (arr.length === 0) {
-        noResults.classList.add("show");
-        return;
-    }
+  if (arr.length === 0) {
+    noResults.classList.add("show");
+    return;
+  }
 
-    noResults.classList.remove("show");
+  noResults.classList.remove("show");
 
-    arr.forEach(item => {
-        const div = document.createElement("div");
-        div.className = "card";
+  arr.forEach(item => {
+    const div = document.createElement("div");
+    div.className = "card";
 
-        div.innerHTML = `
-            <img src="${item.thumbnail}" class="card-img">
-            <div class="card-body">
-                <h3>${item.title}</h3>
-                <p>${item.description}</p>
-                <p class="card-price">$${item.price}</p>
-            </div>
-        `;
+    div.innerHTML = `
+      <img src="${item.thumbnail}" class="card-img">
+      <div class="card-body">
+        <h3>${item.title}</h3>
+        <p>${item.description}</p>
+        <p class="card-price">$${item.price}</p>
+      </div>
+    `;
 
-        container.appendChild(div);
-    });
+    container.appendChild(div);
+  });
 }
 
 // EVENTS
@@ -48,23 +47,32 @@ searchInput.addEventListener("input", applyAll);
 filterSelect.addEventListener("change", applyAll);
 sortSelect.addEventListener("change", applyAll);
 
-// FILTER LOGIC
+// FILTER
 function applyAll() {
-    let result = [...data];
+  let result = [...data];
 
-    const searchText = searchInput.value.toLowerCase();
+  const searchText = searchInput.value.toLowerCase();
 
-    result = result.filter(item =>
-        item.title.toLowerCase().includes(searchText)
-    );
+  result = result.filter(item =>
+    item.title.toLowerCase().includes(searchText)
+  );
 
-    if (filterSelect.value !== "all") {
-        result = result.filter(item => item.category === filterSelect.value);
-    }
+  if (filterSelect.value !== "all") {
+    result = result.filter(item => item.category === filterSelect.value);
+  }
 
-    if (sortSelect.value === "price-low") {
-        result.sort((a, b) => a.price - b.price);
-    }
+  if (sortSelect.value === "price-low") {
+    result.sort((a, b) => a.price - b.price);
+  }
 
-    showData(result);
+  if (sortSelect.value === "price-high") {
+    result.sort((a, b) => b.price - a.price);
+  }
+
+  showData(result);
+}
+
+// NAVIGATION
+function goToSignup() {
+  window.location.href = "signup.html";
 }
