@@ -9,18 +9,27 @@
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="header">
 
-    <div class="logo">🛒 ShopX</div>
+    <div class="left">
+        <div class="logo">🛒 ShopX</div>
 
-    <div class="search-box">
-        <input type="text" id="search" placeholder="Search products...">
+        <div class="search-box">
+            <input type="text" id="search" placeholder="Search products...">
+        </div>
     </div>
 
     <div class="actions">
+        <button class="btn">Account</button>
+        <button class="btn">More ▾</button>
+        <button class="btn">Cart</button>
         <button class="btn" onclick="goToSignup()">Sign Up</button>
     </div>
+    
+    <label class="switch">
+        <input type="checkbox" id="themeToggle">
+        <span class="slider"></span>
+    </label>
 
 </header>
 

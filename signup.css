@@ -93,3 +93,139 @@ body {
   transform: translate(3px, 3px);
   box-shadow: 0px 0px;
 }
+/* ACTIONS LAYOUT */
+.actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* BUTTON (already exists, just confirming consistency) */
+.btn {
+  border: 2px solid var(--main-color);
+  background: white;
+  box-shadow: 4px 4px var(--main-color);
+  padding: 8px 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0px 0px;
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+}
+
+/* MENU */
+.dropdown-menu {
+  position: absolute;
+  top: 45px;
+  left: 0;
+
+  background: white;
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color);
+  border-radius: 8px;
+
+  display: none;
+  flex-direction: column;
+  width: 220px;
+  z-index: 100;
+}
+
+/* ITEMS */
+.dropdown-item {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background: #fff8e7;
+}
+
+/* SHOW */
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+:root {
+  --main-color: #323232;
+  --bg-color: #fff8e7;
+  --card-bg: #ffffff;
+  --text-color: #000;
+}
+
+/* DARK MODE */
+[data-theme="dark"] {
+  --main-color: #e5e5e5;
+  --bg-color: #1a1a1a;
+  --card-bg: #2a2a2a;
+  --text-color: #ffffff;
+}
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* cards */
+.card {
+  background: var(--card-bg);
+}
+
+/* header + footer */
+.header,
+.footer {
+  background: var(--card-bg);
+}
+
+/* inputs */
+.search-box input,
+.controls select {
+  background: var(--card-bg);
+  color: var(--text-color);
+}
+.switch {
+  font-size: 17px;
+  position: relative;
+  width: 3.5em;
+  height: 2em;
+}
+
+.switch input {
+  opacity: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  border: 2px solid #414141;
+  border-radius: 50px;
+  transition: 0.4s;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 1.4em;
+  width: 1.4em;
+  left: 0.2em;
+  bottom: 0.2em;
+  background: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.switch input:checked + .slider {
+  border: 2px solid #0974f1;
+  box-shadow: 0 0 10px #0974f1;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(1.5em);
+}
