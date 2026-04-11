@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+:root {
+  --bg: white;
+}
+
+[data-theme="dark"] {
+  --bg: black;
+}
+
+body {
+  background: var(--bg);
+  height: 100vh;
+  margin: 0;
+}
+</style>
+</head>
+
+<body>
+
+<label>
+  <input type="checkbox" id="toggle"> Dark Mode
+</label>
+
+<script>
+const toggle = document.getElementById("toggle");
+
+toggle.addEventListener("change", () => {
+  if (toggle.checked) {
+    document.documentElement.setAttribute("data-theme", "dark");
+  } else {
+    document.documentElement.removeAttribute("data-theme");
+  }
+});
+</script>
+
+</body>
+</html>
