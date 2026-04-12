@@ -161,22 +161,75 @@ filterSelect.addEventListener("change", applyAll);
 sortSelect.addEventListener("change", applyAll);
 
 // ================= CART =================
-function addToCart(id, title, price) {
-  const existing = cartItems.find(item => item.id === id);
+// function addToCart(id, title, price) {
+//   const existing = cartItems.find(item => item.id === id);
 
-  if (existing) {
-    existing.qty += 1;
-  } else {
-    cartItems.push({ id, title, price, qty: 1 });
-  }
+//   if (existing) {
+//     existing.qty += 1;
+//   } else {
+//     cartItems.push({ id, title, price, qty: 1 });
+//   }
 
-  updateCartCount();
-}
+//   updateCartCount();
+// }
 
-function updateCartCount() {
-  const total = cartItems.reduce((sum, item) => sum + item.qty, 0);
-  cartCount.textContent = total;
-}
+// function updateCartCount() {
+//   const total = cartItems.reduce((sum, item) => sum + item.qty, 0);
+//   cartCount.textContent = total;
+// }
+
+// document.getElementById("cartBtn").addEventListener("click", openCart);
+
+// function openCart() {
+//   const modal = document.getElementById("cartModal");
+//   const cartItemsDiv = document.getElementById("cartItems");
+//   const cartTotal = document.getElementById("cartTotal");
+
+//   cartItemsDiv.innerHTML = "";
+
+//   if (cartItems.length === 0) {
+//     cartItemsDiv.innerHTML = "<p>Your cart is empty 🛒</p>";
+//     cartTotal.textContent = "";
+//   } else {
+//     let total = 0;
+
+//     cartItems.forEach(item => {
+//       total += item.price * item.qty;
+
+//       const div = document.createElement("div");
+//       div.className = "cart-item";
+//       div.innerHTML = `
+//         <span>${item.title}</span>
+//         <span>x${item.qty}</span>
+//         <span>$${(item.price * item.qty).toFixed(2)}</span>
+//         <button class="cart-item-remove"
+//           onclick="removeFromCart('${item.id}')">✕</button>
+//       `;
+//       cartItemsDiv.appendChild(div);
+//     });
+
+//     cartTotal.textContent = `Total: $${total.toFixed(2)}`;
+//   }
+
+//   modal.classList.add("show");
+// }
+
+// function closeCart() {
+//   document.getElementById("cartModal").classList.remove("show");
+// }
+
+// function clearCart() {
+//   cartItems = [];
+//   updateCartCount();
+//   closeCart();
+// }
+
+// function removeFromCart(id) {
+//   cartItems = cartItems.filter(item => item.id !== id);
+//   updateCartCount();
+//   openCart();
+// }
+
 // ================= NAVIGATION =================
 function goToSignup() {
   window.location.href = "signup.html";
